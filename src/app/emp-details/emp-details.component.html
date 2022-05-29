@@ -1,0 +1,46 @@
+ <div class="container-fluid">
+    <app-header></app-header>
+  </div>
+  <br>
+  <div class="container-fluid">
+
+
+  <div class="row">
+      <div class="col">
+          <div >                    
+              <div class="card myrgb" style="width: 400px; ">
+
+                  <div class="card-body">
+                    <h4 class="card-title">{{empObj.name}} </h4>
+                    <div class="card-text">
+                      <h5 style="text-align: center;">
+                         <label for="">Status:</label> &nbsp;  
+                            <span [ngClass]="{
+                                'badge':true,
+                                'badge-pill':true,
+                                'badge-success':empObj.status.toLowerCase()=='active',
+                                'badge-warning':empObj.status.toLowerCase()=='inactive',
+                                'badge-danger':empObj.status.toLowerCase()=='suspend'
+                                }" style="padding: 10px;" >{{empObj.status}}
+                            </span>
+
+                        </h5> 
+                        <h5 style="text-align: center;"> <strong>Mobile No:- {{empObj.phoneno}}</strong> </h5>
+                        <h5 style="text-align: center;"><strong>Department:- {{empObj.department}}</strong> </h5>
+                        <h5 style="text-align: center;"> <strong>Country:- {{empObj.country.cname}}</strong> </h5>
+                        <h5 style="text-align: center;"> <strong>Created By:- {{empObj.createdby}} </strong> </h5>
+                        <h5 style="text-align: center;"> <strong>Created Date & Time:- {{empObj.createddtm}} </strong> </h5>
+                        <h5 style="text-align: center;"> <strong>Updated By:- {{empObj.updatedby}} </strong> </h5>
+                        <h5 style="text-align: center;"> <strong>Updated Date & Time:- {{empObj.updateddtm}} </strong> </h5>
+                    </div>
+                    <div style="text-align: center;">
+                         <button class="btn btn-primary" (click)="OnUpdate()">Upadate Employee</button>
+                   <button routerLink="/home" class="btn btn-success">Home</button>
+                    </div>
+                   
+
+      </div>
+  </div>
+
+
+  </div>

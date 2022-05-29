@@ -1,0 +1,46 @@
+<div style="margin: 5px;padding: 5px;">
+
+  <div class="form-group">
+      <label for="">ID </label>
+      <input type="text" class="form-control" 
+       placeholder="Enter the id"
+        [(ngModel)]="parentData.id" readonly>
+  </div>
+  <div class="form-group">
+      <label for="">Employee Name </label>
+      <input type="text" class="form-control" 
+       placeholder="Enter the name"
+       [(ngModel)]="parentData.name" >
+  </div>
+  <div class="form-group">
+      <label for="">Employee Department </label>
+      <input type="text" class="form-control"  placeholder="Enter the department"
+       [(ngModel)]="parentData.department">
+  </div>
+  <div class="form-group">
+      <label for="">Employee Status </label>
+      <input type="text" class="form-control"  placeholder="Enter the status"
+       [(ngModel)]="parentData.status" >
+  </div>
+
+ <div class="form-group">
+      <select name="" id="" [(ngModel)]="parentData.country" >
+          <!-- <option [value]="item.cid" *ngFor="let item of allCountry"> -->
+              <option name="select"  [ngValue]="item" *ngFor="let item of allCountry">
+              {{item.cname}}
+          </option>
+      </select>
+
+ </div>
+
+
+  <hr>
+  <div class="form-group">
+      <button (click)="onUpdate()" class="btn btn-success" 
+      [disabled]="!isSubmitDissabled">Submit</button>
+      <br><br> 
+      <span class="alert alert-success" 
+      [hidden]="isSubmitDissabled"> {{backendResponse}} </span>
+  </div>
+
+</div>
